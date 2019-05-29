@@ -4,7 +4,7 @@ var wins = 0;
 var losses = 0;
 var ties = 0;
 var counter = 0;
-var maxTires = 3;   //the Max # of tries the user can guess
+var maxTries = 3;   //the Max # of tries the user can guess
 
 // This will create variables that hold references to the places in the HTML where we want to display things.
 // const $score = document.getElementById('score');   not sure if const is needed with so many varibles
@@ -45,6 +45,11 @@ document.onkeyup = function (event) {
         console.log("Wrong!! Try again.")
         counter++
         console.log(counter)
+
+        if (counter >= maxTries) {
+            console.log("You lose....You have no more tries left.")
+        }
+        console.log(maxTries)
     }
 }
 // Check to see if letter is correct
@@ -54,7 +59,7 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 if (randomLetter.length < 26) {
     randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 }
-console.log(randomLetter);
+console.log(randomLetter)
 
 
 
