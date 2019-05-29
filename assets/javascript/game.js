@@ -15,47 +15,46 @@ var maxTires = document.getElementById("max-text");
 
 
 // moved into loop to keep prompting guesses from user. 
-var attempts
-while (attempts != randomLetter) {
-  var attempts = prompt("Please pick a letter between A-Z" + UserNumber);
-  counter += 1;
+// var attempts
+// while (attempts != randomLetter) {
+//     var attempts = prompt("Please pick a letter between A-Z" + UserNumber);
+//     counter += 1;
 
-  // I want to only give 3 tires before counting a loss.
-  if (counter > maxTires) {
-    break
-    document.write("You lose....You have no more tries left.");
-  }
+//     // I want to only give 3 tires before counting a loss.
+//     if (counter > maxTires) {
+//         break
+//         document.write("You lose....You have no more tries left.");
+//     }
 
-  else (attempts === randomLetter) {
-    document.write("Winner!");
-    document.write("The letter was" + randomLetter);
-    document.write("It took" + counter + "Attempts to get the correct letter");
-  }
-}
+//     else if (attempts === randomLetter) {
+//         document.write("Winner!");
+//         document.write("The letter was" + randomLetter);
+//         document.write("It took" + counter + "Attempts to get the correct letter");
+//     }
+// }
 
 // Add the key functions here
-onkeyup = function (event) {
-  console.log(event)
-  console.log(event.key)
-}
-
-// compare to t/f
-console.log(event.key === randomLetter)
-if (event.key === randomLetter) {
-  console.log("RIGHT!! You're awesome!")
-}
-else {
-  console.log("Wrong!! Try again.")
-}
+document.onkeyup = function (event) {
+    console.log(event)
+    console.log(event.key)
+    console.log(event.key === randomLetter)
+    if (event.key === randomLetter) {
+        console.log("RIGHT!! You're awesome!")
+    }
+    else {
+        console.log("Wrong!! Try again.")
+        counter++
+        console.log(counter)
+    }
 }
 // Check to see if letter is correct
 // my letter string has been tested with console.log
 var randomLetter = "";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
-  (randomLetter.length < 26); {
+if (randomLetter.length < 26) {
     randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-    }
-// console.log(randomLetter);
+}
+console.log(randomLetter);
 
 
 
